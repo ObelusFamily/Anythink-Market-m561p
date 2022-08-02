@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
-import defaultImage from "../imgs/placeholder.png"
+
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
     dispatch({
@@ -28,6 +28,7 @@ const ItemPreview = (props) => {
       props.favorite(item.slug);
     }
   };
+
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -35,8 +36,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        // src={item.image}
-        src={defaultImage}
+        src={"placeholder.png"}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
